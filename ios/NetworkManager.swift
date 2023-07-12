@@ -9,12 +9,13 @@ import Foundation
 
 @objc(NetworkManager)
 class NetworkManager: NSObject {
-  
+
 @objc func doGet(_ url: String, resolver: @escaping RCTPromiseResolveBlock, rejecter: @escaping RCTPromiseRejectBlock) {
     guard let constructedURL = URL(string: url) else {
       fatalError("Failed to create URL")
     }
-    
+  
+    //Implement the caching mechanism in the native side, if performance is key
     let request = URLRequest(url: constructedURL)
     
     let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -30,6 +31,7 @@ class NetworkManager: NSObject {
         return
       }
       
+      //probably create a response DTO, and a map transformation of it, in order to pass it RN
       let stringifiedData = String(data: responseData, encoding: .utf8)
       resolver(stringifiedData)
     }

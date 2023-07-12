@@ -46,7 +46,7 @@ const App: () => Node = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <FlatList
-        style={{flex: 1}}
+        style={styles.flatlist}
         data={planets}
         renderItem={({item, index, separators}) => {
           console.log('item!', item);
@@ -63,6 +63,11 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     flex: 1,
-    padding: 20,
+    backgroundColor: 'black',
+  },
+  flatlist: {
+    flex: 1,
+    padding: 8,
+    backgroundColor: 'yellow',
   },
 });
