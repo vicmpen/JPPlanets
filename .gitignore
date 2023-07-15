@@ -61,4 +61,5 @@ buck-out/
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
+ios/ReactNativeInterview.xcworkspace/xcshareddata/
 /node_modules
