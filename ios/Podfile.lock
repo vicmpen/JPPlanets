@@ -370,6 +370,8 @@ PODS:
     - React-jsi (= 0.69.0)
     - React-logger (= 0.69.0)
     - React-perflogger (= 0.69.0)
+  - RNCAsyncStorage (1.19.0):
+    - React-Core
   - RNFS (2.20.0):
     - React-Core
   - SocketRocket (0.6.0)
@@ -437,6 +439,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNFS (from `../node_modules/react-native-fs`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -527,6 +530,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNFS:
     :path: "../node_modules/react-native-fs"
   Yoga:
@@ -558,7 +563,7 @@ SPEC CHECKSUMS:
   React: 8a8fc19196a41141ecb5bde33c97091cdc25ccd8
   React-bridging: 543858c1fc01ed8264585c5a2646305d20225840
   React-callinvoker: cc62aa541f261cee6f990f870dbf6aff38f97eef
-  React-Codegen: b3a302c8f6216332fe9d64be3f6eba00154a0c41
+  React-Codegen: a80f7ec979174e44dcaecc9d5639ac84a7077a71
   React-Core: 7faa8679c6f38b5462a71d55b399483f46365e44
   React-CoreModules: 3a51e8d50928a8593ea44606c00ffa60db95222f
   React-cxxreact: 51a2239091bc13a3c0b5b1cb445b1585a483df2d
@@ -580,6 +585,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: 7549ef7b07aad1cc629f4c6d88c325366f26423c
   React-runtimeexecutor: 7ad268dee53d001697e13264c6bc8e95a902352e
   ReactCommon: 74a3b8ee497c6d50ce86ef57e15c4c5bf654b83d
+  RNCAsyncStorage: 4b98ac3c64efa4e35c1197cb0c5ca5e9f5d4c666
   RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 4935173923cabaa830e195be3e8e4cac045a8f90
