@@ -27,6 +27,9 @@
     "react-test-renderer": "18.0.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupFiles": [
+      "./justSetup.js"
+    ]
   }
 }
