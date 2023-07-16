@@ -14,8 +14,8 @@ const get = async url => {
   return response;
 };
 //Exported func to fetch the planets
-const getAllPlanets = () => {
-  return get('https://swapi.dev/api/planets/');
+const getAllPlanets = async () => {
+  return await get('https://swapi.dev/api/planets/');
 };
 
 export default {
