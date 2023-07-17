@@ -30,7 +30,7 @@ public class NetworkManager extends ReactContextBaseJavaModule {
      * @param promise-return  a success/error payload to js
      */
     @ReactMethod
-    public void fetch(String inputUrl,final Promise promise) {
+    public void doGet(String inputUrl,final Promise promise) {
         URL url;
         HttpURLConnection urlConnection = null;
         try {
