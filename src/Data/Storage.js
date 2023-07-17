@@ -1,10 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 /**
- *
- * @param {the key to look in the DB} key
- * @param {The return value} value
- * @returns the stringified value
+ * Storage class to abstract away AsyncStorage. Generic get/set/delete item functions + some specific planet implementation
+ * Works with stringified values.
  */
 
 const saveItem = async (key, value) => {
@@ -45,7 +43,7 @@ const createError = message => {
   return Error(message);
 };
 
-//Planet implementation
+//Planet implementation of Storage
 const storage_keys = {
   GET_ALL_PLANETS_KEY: 'ALL_PLANETS',
 };
@@ -79,14 +77,12 @@ const getPlanet = async key => {
 /**
  * Fetches all planets from the storage.
  * TODO: Throw Error
- *
- * @returns an array with planets or null if there no planets, or an error occured
  */
 const getAllPlanets = async () => {
   try {
     return await getItem(storage_keys.GET_ALL_PLANETS_KEY);
   } catch (error) {
-    return null;
+    return createError('Error while Fetching Planets', error);
   }
 };
 
@@ -94,7 +90,10 @@ const deleteAllPlanets = async () => {
   try {
     let _ = await AsyncStorage.removeItem(storage_keys.GET_ALL_PLANETS_KEY);
     console.log('Storage: Planets Deleted ');
-  } catch (error) {}
+  } catch (error) {
+    return createError('Error while Deleting Planets', error);
+
+  }
 };
 
 export default {

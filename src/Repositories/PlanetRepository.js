@@ -15,6 +15,7 @@ const fetchPlanets = async forceReload => {
   );
   try {
     if (forceReload) {
+      //delete the old entry for planets //TODO: Maybe rethink this, because what happens if the network request fails?
       await Storage.deleteAllPlanets();
       let planets = await loadPlanetsFromApiAndSaveToStorage();
       return planets;
