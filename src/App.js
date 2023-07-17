@@ -15,18 +15,22 @@ import {
   StatusBar,
   useColorScheme,
   StyleSheet,
+  View,
+  Text,
 } from 'react-native';
 
 import PlanetRepository from './Repositories/PlanetRepository';
 import PlanetList from './Planets/PlanetComponent';
 import PlanetComponent from './Planets/PlanetComponent';
 import AppConfig from './AppConfig';
+import {useNetInfo} from '@react-native-community/netinfo';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <NetInfo />
       <PlanetComponent debug={AppConfig.debug_mode} />
     </SafeAreaView>
   );
@@ -46,3 +50,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow',
   },
 });
+
+export const NetInfo = () => {
+  return (
+    <View style={{height: 50, width: '100%', backgroundColor: 'green'}}>
+      <Text>Device Online: {useNetInfo().isConnected?.toString()}</Text>
+    </View>
+  );
+};
