@@ -1,5 +1,5 @@
 # JPPlanets
-Interview project for JPMorgan for Victor Benetatos
+Recent Interview project
 
 Used Mac and Yarn to install dev and update dependencies
 
